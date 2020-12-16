@@ -1,6 +1,7 @@
 
-
+const taskManager = new TaskManager(0);
 const addTaskForm = document.querySelector('#addTaskForm');
+console.log(taskManager);
 
 
 addTaskForm.addEventListener('submit', (event) => {
@@ -16,8 +17,6 @@ addTaskForm.addEventListener('submit', (event) => {
     const errorMessage = document.querySelector('#alertMessage');
     
   
-    
-    
   
     const formname = name.value;
     const formAssignedTo = AssignedTo.value;
@@ -52,6 +51,15 @@ addTaskForm.addEventListener('submit', (event) => {
         
         errorMessage.style.display = "none"
     }
+
+    taskManager.addTask(formname, formAssignedTo, formduedate, formdescription);
+
+    // Clear the form after submiting it
+  name.value = '';
+  AssignedTo.value = '';
+  duedate.value = '';
+  status.value = '';
+  description.value = '';
 
 });
 
