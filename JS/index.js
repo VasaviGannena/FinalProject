@@ -47,22 +47,20 @@ addTaskForm.addEventListener('submit', (event) => {
         errorMessage.innerHTML = "Need to add a task description";
         errorMessage.style.display = "block"
 
-    }else{
-        
-        errorMessage.style.display = "none"
     }
+    else {
+    errorMessage.style.display = "none";
+    taskManager.addTask(formname, formAssignedTo, formduedate, formstatus, formdescription);
+    event.target.reset();
+  }
+   
 
-    taskManager.addTask(formname, formAssignedTo, formduedate, formdescription);
-
-    // Clear the form after submiting it
-  name.value = '';
-  AssignedTo.value = '';
-  duedate.value = '';
-  status.value = '';
-  description.value = '';
-
+  
+  // Render the tasks
+  taskManager.render();
 });
 
 function validFormFieldInput(data){
-    return data !== null && data !== '';
-}
+  return data !== null && data !== '';
+};
+
