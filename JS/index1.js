@@ -16,7 +16,8 @@ addTaskForm.addEventListener('submit', (event) => {
     const status = document.querySelector('#status');
     const errorMessage = document.querySelector('#alertMessage');
     
-    
+  
+  
     const formname = name.value;
     const formAssignedTo = AssignedTo.value;
     const formduedate = duedate.value;
@@ -48,48 +49,20 @@ addTaskForm.addEventListener('submit', (event) => {
 
     }else{
         
-        errorMessage.style.display = "none";
-        taskManager.addTask(formname, formAssignedTo, formduedate, formstatus, formdescription);
-        event.target.reset();
-        
-        
+        errorMessage.style.display = "none"
     }
-       
-  // Render the tasks
-  taskManager.render();
+
+    taskManager.addTask(formname, formAssignedTo, formduedate, formdescription);
+
+    // Clear the form after submiting it
+  name.value = '';
+  AssignedTo.value = '';
+  duedate.value = '';
+  status.value = '';
+  description.value = '';
+
 });
 
 function validFormFieldInput(data){
-  return data !== null && data !== '';
-};
-
-// Update for tomorrow 
-// /* Update status */
-// const taskCard = document.querySelector('#task-card');
-
-// // Add an 'onclick' event listener to the Tasks List
-// taskCard.addEventListener('click', (event) => {
-//     // Check if a "Mark As Done" button was clicked
-//     if (event.target.classList.contains('done-button')) {
-//         // Get the parent Task
-//         const parentTask = event.target.parentElement.parentElement;
-
-//         // Get the bookId of the parent Book.
-//         const taskId = Number(parentTask.id);
-
-//         // Get the book from the BookManager using the bookId
-//         const task = taskManager.gettasknameId(taskId);
-
-//         // Update the book status to 'READ'
-//         task.status = 'Done';
-
-//         // Render the books
-//         taskManager.render();
-//     }
-
-//   });
-// });
-
-// // function validFormFieldInput(data){
-// //     return data !== null && data !== '';
-// // }
+    return data !== null && data !== '';
+}
