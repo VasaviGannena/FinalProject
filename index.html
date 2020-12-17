@@ -51,38 +51,37 @@
         <div class="container">
             <div class="row justify-content-center py-5">
                 <div class="col-md-4 col-sm-4 col-xs-12 bg-light">
-                    <form class="justify-content-center border-dark p-5">
-                        <p class="h4 mb-4 text-center">TaskForm</p>
+                    <form class="justify-content-center border-dark p-5" id="addTaskForm" method="post">
+                        <p class="h4 mb-4 text-center">Task Form</p>
+
                         <div class="form-group py-3">
-                            <label for="name">Name</label>
+                            <label for="name">Task Name</label>
+                            <i class="fas"></i>
                             <div class="input-container d-flex flex-wrap mb-3">
-                                <input type="Name" class="form-control" id="name" placeholder="Nametask"></div>
+                                <input type="text" class="form-control" id="name" placeholder="Task name">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="AssignedTo">Assigned To</label>
                             <select class="form-control" id="AssignedTo">
-                                <option>Select</option>
-                                <option>Laize</option>
-                                <option>Albert</option>
-                                <option>Lisa</option>
-                                <option>Livna</option>
-                                <option>Michale</option>
-                                <option>...</option>
+                                <option></option>
+                                <option>Vasavi</option>
+                                <option>Lou</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <!-- Date input -->
                             <label class="control-label" for="duedate"> Due Date</label>
-                            <!-- <i class="far fa-calendar-alt"></i> -->
+                            <i class="far"></i>
 
                             <input class="form-control" id="duedate" name="date" placeholder="MM/DD/YYY" type="date" />
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>
                             <select class="form-control" id="status">
-                                <option>Choose</option>
-                                <option>Todo</option>
-                                <option>Inprogress</option>
+                                <option></option>
+                                <option>To do</option>
+                                <option>In progress</option>
                                 <option>Review</option>
                                 <option>Done</option>
                             </select>
@@ -90,28 +89,33 @@
                         <div class="form-group">
                             <label for="description">Description</label>
                             <textarea class="form-control" id="description" rows="3"></textarea>
-                            <div class="form-check py-3">
-                                <input class="form-check-input" type="checkbox" value="" id="checkbox">
-                                    Mark it Confrim
-                                </label>
-                            </div>
+                        </div>
+                        <div id="alertMessage" style="display: none" class="alert alert-danger" role="alert">
+
                         </div>
 
                         <div class="text-right">
-                            <a href="Tasks/Task.html"> <button type="submit" id="AddTask" class="btn btn-dark">AddTask</button></a>
-                           
-                          
+
+
+                            <button type="submit" class="btn btn-dark">Add task</button>
+
                         </div>
 
-                </div>
+                    </form>
+                    <!-- // display card // -->
 
-                </form>
+                    <!-- // display card // -->
+                    <div class="row">
+                        <div class="col" id="task-card"></div>
+                    </div>
+
+                    <div class="row py-3"></div>
+                </div>
             </div>
-        </div>
-        </div>
+
+            <!-- </div>  -->
     </main>
 
-    <script src="addtask.js"></script>
 
     <!-- // Jquery Pooper and bootstrap// -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -124,6 +128,9 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
     <!-- // Jquery Pooper and bootstrap// -->
+
+    <script src="JS/TaskManager.js"></script>
+    <script src="JS/index.js"></script>
 
 
 
