@@ -20,6 +20,43 @@ class TaskManager {
         this.task.push(newTask);
     };
 
+/* Update status*/ 
+  // Method to get the book id to update status
+//   gettasknameId(taskId) {
+//     let foundTask;
+
+//     for (let i = 0; i < this.task.length; i++) {
+
+//       const tasks = this.task[i];
+
+//       if(task.id === taskId){
+//         foundTask = tasks;
+//       };
+//     };
+//     return foundTask;
+//   };
+
+   /*Display list of tasks*/
+  render() {
+      const taskHtmlList = [];
+
+      for(let i = 0; i < this.task.length; i++) {
+        const tasks = this.task[i];
+    /*Format date - dd/mm/yyyy */
+      // Get the Javascript object new Date, give it the argument book.date, and assign it to a variable
+        const DueDate = new Date(tasks.formduedate);
+      // Save the formatted date in a variable
+        const formattedDate = DueDate.getDate() + '/' + (DueDate.getMonth() + 1) + '/' + DueDate.getFullYear();  
+        
+        const taskHtml = createTaskHtml(tasks.formname, tasks.formAssignedTo, tasks.formdescription, formattedDate, tasks.formstatus);
+
+        taskHtmlList.push(taskHtml);
+      };
+        const tasksHtml = taskHtmlList.join('\n');
+
+        const taskList = document.querySelector('#task-card');
+        taskList.innerHTML = tasksHtml;
+    };
 
    /*Display list of card*/
   render() {

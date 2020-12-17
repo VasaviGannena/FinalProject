@@ -16,8 +16,7 @@ addTaskForm.addEventListener('submit', (event) => {
     const status = document.querySelector('#status');
     const errorMessage = document.querySelector('#alertMessage');
     
-  
-  
+    
     const formname = name.value;
     const formAssignedTo = AssignedTo.value;
     const formduedate = duedate.value;
