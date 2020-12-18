@@ -6,7 +6,7 @@ class TaskManager {
 
     addTask(formname, formAssignedTo, formduedate, formdescription) {
         const newTask = {
-            id: this.curentId++,
+            id: this.currentId++,
             formname: formname,
             formAssignedTo: formAssignedTo,
             formduedate: formduedate,
@@ -20,7 +20,7 @@ class TaskManager {
     };
 
 /* Update status*/ 
-  // Method to get the book id to update status
+  // Method to get the task id to update status
 getTaskById(taskId) {
      let foundTask;
 
@@ -95,7 +95,6 @@ getTaskById(taskId) {
             <div class="d-flex w-100 mt-3 justify-content-between align-items-center">
             <small>DueDate: ${DueDate}</small>
             <button class="btn btn-outline-success done-button ${formstatus === 'To do' ? 'visible' : 'invisible'}">Mark As Done</button>
-            
             </div>
             </li>
           `;

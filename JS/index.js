@@ -54,8 +54,6 @@ addTaskForm.addEventListener('submit', (event) => {
     event.target.reset();
   }
 
-
-
    // Render the tasks
    taskManager.render();
 });
@@ -72,15 +70,15 @@ taskCard.addEventListener('click', (event) => {
     // Check if a "Mark As Done" button was clicked
     if (event.target.classList.contains('done-button')) {
         
-        // const button = event.target;
+        const button = event.target;
         const parentTask = event.target.parentElement.parentElement;
-console.log(parentTask)
-        // Get the bookId of the parent Book.
+
+       
         const taskId = Number(parentTask.id);
-    console.log(taskId)    
-        // Get the book from the BookManager using the bookId
+    
+       
         const task = taskManager.getTaskById(taskId);
-        console.log(task)
+        
         task.formstatus = 'DONE';
 
         if(task.formstatus === 'DONE'){
@@ -91,8 +89,6 @@ console.log(parentTask)
             button.remove();
         };
         // console.log(tasks.formstatus);
-
-
      
         // tasks.formstatus = 'Mark as Done';
 
