@@ -22,6 +22,7 @@ addTaskForm.addEventListener('submit', (event) => {
     const formduedate = duedate.value;
     const formstatus = status.value;
     const formdescription = description.value;
+
     if(!validFormFieldInput(formname)){
         errorMessage.innerHTML = "Need to add a task name";
         errorMessage.style.display = "block"
@@ -52,14 +53,56 @@ addTaskForm.addEventListener('submit', (event) => {
     taskManager.addTask(formname, formAssignedTo, formduedate, formstatus, formdescription);
     event.target.reset();
   }
-   
 
-  
-  // Render the tasks
-  taskManager.render();
+
+
+   // Render the tasks
+   taskManager.render();
 });
 
-function validFormFieldInput(data){
-  return data !== null && data !== '';
-};
+  function validFormFieldInput(data){
+    return data !== null && data !== '';
+  };
+   
+/* Update status */
+const taskCard = document.querySelector('#task-card');
+
+// Add an 'onclick' event listener to the Tasks List
+taskCard.addEventListener('click', (event) => {
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        
+        // const button = event.target;
+        const parentTask = event.target.parentElement.parentElement;
+console.log(parentTask)
+        // Get the bookId of the parent Book.
+        const taskId = Number(parentTask.id);
+    console.log(taskId)    
+        // Get the book from the BookManager using the bookId
+        const task = taskManager.getTaskById(taskId);
+        console.log(task)
+        task.formstatus = 'DONE';
+
+        if(task.formstatus === 'DONE'){
+            const badge = parentTask.getElementsByClassName('badge');
+            badge[0].classList.remove('badge.warning');
+            badge[0].classList.add('badge-success');
+            badge[0].innerHTML = 'Done';
+            button.remove();
+        };
+        // console.log(tasks.formstatus);
+
+
+     
+        // tasks.formstatus = 'Mark as Done';
+
+         // Render the tasks
+   taskManager.render();
+    }
+});
+
+  
+ 
+
+
 
