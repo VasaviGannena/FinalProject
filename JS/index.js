@@ -64,3 +64,17 @@ function validFormFieldInput(data){
   return data !== null && data !== '';
 };
 
+//  update status //
+const TaskList = document.querySelector('#task-card');
+
+TaskList.addEventListener('click', (event) =>{
+    if(event.target.classList.Contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+        const TaskId = Number(parentTask.id);
+        const Task = taskManager.getTaskById(TaskId);
+        Task.status = 'Done';
+        taskManager.render();
+    }
+});
+
+

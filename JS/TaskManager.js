@@ -1,3 +1,5 @@
+
+  
 class TaskManager {
     constructor(currentId = 0) {
         this.task = [];
@@ -18,7 +20,22 @@ class TaskManager {
 // console.log(newTask);
 
         this.task.push(newTask);
-    };
+    }
+    
+
+      //update Task//
+      getTaskById(TaskId){
+    let foundTask;
+    for(let i=0; i < this.task.length; i++ ){
+      const tasks = this.task[i];
+      if(tasks.id === TaskId ){
+        foundTask = task;
+      };
+
+      };
+      return foundTask;
+    }
+
 
 
    /*Display list of card*/
@@ -44,33 +61,20 @@ class TaskManager {
 
     };  
     
-  }
-  
-  const createTaskHtml = (formname, formAssignedTo, formdescription, DueDate, formstatus) => {
-
-    return `
-            <li class="list-group-item mt-2">
-            <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
+}
+const createTaskHtml = ( formname, formdescription, formAssignedTo, DueDate, formstatus) => `
+    <li class="list-group-item" data-task-id=${id}>
+        <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
             <h5>${formname}</h5>
-          <span class="badge ${formAssignedTo === 'Vasavi' ? 'badge-dark' : 'badge-info'}">${formAssignedTo}</span>
-           <span class="badge ${formstatus === 'To do' ? 'badge-success' : 'badge-warning'}">${formstatus}</span>
-
-
-</div>
-         <div class="d-flex w-100 mb-3 justify-content-between">
-            <small>Description: ${formdescription}</small>
-           
-           
-
-
-            </div>
-            
-            <div class="d-flex w-100 mt-3 justify-content-between align-items-center">
-            <small>DueDate: ${DueDate}</small>
-
-          
-            </div>
-            </li>
-          `;
-  }
-  
+            <span class="badge ${formstatus === 'TODO' ? 'badge-danger' : 'badge-success'}">${formstatus}</span>
+        </div>
+        <div class="d-flex w-100 mb-3 justify-content-between">
+            <small>Assigned To: ${formAssignedTo}</small>
+            <small>Due: ${DueDate}</small>
+        </div>
+        <p>${formdescription}</p>
+        <div class="d-flex w-100 justify-content-end">
+            <button class="btn btn-outline-success done-button ${formstatus === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
+        </div>
+    </li>
+`;
