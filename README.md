@@ -6,7 +6,7 @@ For Generation Australia
 ---
 
 :wave: Hello! :smile:
-Welcome to "The TaskPalnner Project", a web application built by me, Vasavi GAnnena. It was the final project for the Generation Australia / Academy Xi "Front-end Web Development Bootcamp" undertaken from oct 2020 to Feb 2021. I hope you will enjoy using it as much as I enjoyed building it!
+Welcome to "The TaskPalnner Project", a web application built by me, Vasavi Gannena. It was the final project for the Generation Australia / Academy Xi "Front-end Web Development Bootcamp" undertaken from oct 2020 to Feb 2021. I hope you will enjoy using it as much as I enjoyed building it!
 
 Application is Live:  my site is published at https://vasavigannena.github.io/FinalProject/
 ## Developer Platforms 
