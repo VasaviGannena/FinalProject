@@ -100,4 +100,4 @@ getTaskById(taskId) {
           `;
   }
   
-            
+  module.exports = TaskManager;          
