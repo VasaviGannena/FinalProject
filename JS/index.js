@@ -64,6 +64,7 @@ addTaskForm.addEventListener('submit', (event) => {
     event.target.reset();
 }
     taskManager.save();
+    taskManager.editTask();
    // Render the tasks
     taskManager.render();
 });
@@ -103,6 +104,16 @@ function validFormFieldInput(data){
         // Save the tasks to localStorage
         taskManager.save();
         // Render the tasks
+        taskManager.render();
+    }
+    if(event.target.classList.contains('edit-button')){
+        const parentTask = event.target.parentElement.parentElement;
+        console.log(parentTask);
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(taskId);
+        taskManager.editTask(taskId);
+        console.log(taskId);
+        taskManager.save();
         taskManager.render();
     }
 });
