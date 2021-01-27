@@ -4,7 +4,7 @@ For Generation Australia
 
 👋 Hello! 😄 Welcome to "The TaskPlanner project ", a web application built by me and Lou . It was the final project for the Generation Australia / Academy Xi "Front-end Web Development Bootcamp" undertaken from oct 2020 to Feb 2021. I hope you will enjoy using it as much as I enjoyed building it!
 
-Application is Live here on :
+Application is Live here on : https://github.com/LouPellegrino/FinalProject
 
 Developer Platforms
 The following tools have been used to develop this application:
