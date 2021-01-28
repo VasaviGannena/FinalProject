@@ -32,18 +32,7 @@
         this.task = newTasks;
         console.log(this.task);
     }
-    // Edit task
-    // editTask(taskId){
-    //   const newTasks = [];
-    //   for( let i=0; i<this.task.length; i++){
-    //     const task = this.task[i];
-    //     if(task.id !== taskId){
-    //       newTasks.push(task);
-    //     }
-    //   }
-    //   this.task = newTasks;
-    //   console.log(this.task);
-    // }
+   
     /* Update status*/ 
     // Method to get the task id to update status
     getTaskById(taskId) {
@@ -148,6 +137,7 @@
     }
 
 
-  module.exports = TaskManager;
+  if(typeof module != 'undefined'){
+    module.exports = TaskManager;
+}
 
-                // <button class= "btn edit-button btn-outline-info text-centre">Edit</button>

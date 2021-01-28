@@ -64,7 +64,6 @@
         event.target.reset();
     }
         taskManager.save();
-        taskManager.editTask();
     // Render the tasks
         taskManager.render();
     });
