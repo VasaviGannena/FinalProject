@@ -133,4 +133,6 @@
             `;
       
   }
-module.exports = TaskManager;
+if(typeof module != 'undefined'){
+    module.exports = TaskManager;
+}
