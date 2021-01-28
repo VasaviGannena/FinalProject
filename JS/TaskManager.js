@@ -1,11 +1,14 @@
- class TaskManager {
+// create a object to the TaskManager
+class TaskManager {
+  // inform about the task
     constructor(currentId = 0) {
+      // 
         this.task = [];
         this.currentId = currentId;
       }
 
-
     addTask(formname, formAssignedTo, formduedate, formstatus, formdescription) {
+      // Instantiate Task
         const newTask = {
             id: this.currentId++,  
             formname: formname,
@@ -14,10 +17,11 @@
             formstatus: formstatus,
             formdescription: formdescription   
         };
+        // push()
         this.task.push(newTask);
     };
 
-  
+  // delete the task
     deleteTask(taskId) {
       
       const newTasks = [];
@@ -33,7 +37,7 @@
       console.log(this.task);
   }
   /* Update status*/ 
-  // Method to get the task id to update status
+  // Method to get the task id to update status (ApI : get())
   getTaskById(taskId) {
     let foundTask;
 
@@ -53,7 +57,7 @@
       
       const taskJson = JSON.stringify(this.task);
   console.log(taskJson);
-      // Store the JSON string in localStorage
+      // Store the JSON string in localStorage (WEBAPI : Set())
       localStorage.setItem('task', taskJson);
 
       // Convert the currentId to a string;

@@ -3,12 +3,17 @@ const taskManager = new TaskManager(0);
 
 taskManager.load();
 taskManager.render();
+
+// Event add to task and #addTaskForm comes from FormID in index.html file
 const addTaskForm = document.querySelector('#addTaskForm');
 
-
+// Add ES6 syntax to get event 
 addTaskForm.addEventListener('submit', (event) => {
- 
+
+    // if you display this preventDefault() it will dispaly and disappear console 
+    // To see task information in the console 
     event.preventDefault();
+    // console.log(task);
 
 
     const name = document.querySelector('#name');
@@ -18,7 +23,7 @@ addTaskForm.addEventListener('submit', (event) => {
     const status = document.querySelector('#status');
     const errorMessage = document.querySelector('#alertMessage');
     
-    
+    // variables
     const formname = name.value;
     const formAssignedTo = AssignedTo.value;
     const formduedate = duedate.value;
@@ -72,7 +77,7 @@ function validFormFieldInput(data){
     return data !== null && data !== '';
 };
 
-
+// Add Task to card
  const taskCard = document.querySelector('#task-card');
 
     taskCard.addEventListener('click', (event) => {
